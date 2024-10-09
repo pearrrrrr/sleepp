@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Disorder Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sleep Disorder Predictor</h1>
+    <form method="post">
+        {% csrf_token %}
+        
+        <label for="gender">Gender:</label>
+        {{ form.gender }}
+
+        <label for="age">Age:</label>
+        {{ form.age }}
+
+        <label for="sleep_duration">Sleep duration (ชั่วโมงการนอน 0-10):</label>
+        {{ form.sleep_duration }}
+
+        <label for="quality_of_sleep">Quality of sleep (คุณภาพการนอน 0-10):</label>
+        {{ form.quality_of_sleep }}
+
+        <label for="physical_activity_level">Physical activity level (ระดับกิจกรรมทางกาย/นาทีต่อวัน (0-100)):</label>
+        {{ form.physical_activity_level }}
+
+        <label for="stress_level">Stress level (ระดับความเครียด 0-10):</label>
+        {{ form.stress_level }}
+
+        <label for="bmi_category">BMI category:</label>
+        {{ form.bmi_category }}
+
+        <label for="heart_rate">Heart rate:</label>
+        {{ form.heart_rate }}
+
+        <label for="daily_steps">Daily steps:</label>
+        {{ form.daily_steps }}
+
+        <label for="systolic_bp">Systolic bp (ค่าความดันโลหิตในระหว่างการหดตัวของหัวใจ):</label>
+        {{ form.systolic_bp }}
+
+        <label for="diastolic_bp">Diastolic bp (ค่าความดันโลหิตในระหว่างการผ่อนคลายของหัวใจ):</label>
+        {{ form.diastolic_bp }}
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
